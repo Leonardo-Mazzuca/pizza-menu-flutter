@@ -15,14 +15,14 @@ class Menu extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: (Column(
-          children: buildPizzas()
+          children: _buildPizzas()
         )),
       ),
     );
   }
 }
 
-List<PizzaCard> buildPizzas () {
+List<PizzaCard> _buildPizzas () {
 
   List<PizzaCard> list = [];
   for(var pizza in pizzaData) {
