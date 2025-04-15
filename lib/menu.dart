@@ -23,7 +23,6 @@ class Menu extends StatelessWidget {
 }
 
 List<PizzaCard> _buildPizzas () {
-
   List<PizzaCard> list = [];
   for(var pizza in pizzaData) {
     list.add(PizzaCard(pizza: pizza));

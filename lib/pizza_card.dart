@@ -16,12 +16,15 @@ class PizzaCard extends StatelessWidget {
         padding: EdgeInsets.all(12),
         child: (Row(
           children: [
-            Image.asset(
+            ColorFiltered(
+              colorFilter: ColorFilter.mode(pizza.soldOut ? Colors.grey : Colors.transparent, BlendMode.saturation),
+              child: Image.asset(
               "images/${pizza.photoName}",
               width: 100,
               height: 100,
               fit: BoxFit.cover,
-            ),
+            )),
+    
             SizedBox(width: 16,),
             Expanded(
               child: Column(
