@@ -5,8 +5,8 @@ class Pizza {
   final int price;
   final bool soldOut;
 
-  Pizza(
-      {required this.name,
+  Pizza({
+      required this.name,
       required this.ingredients,
       required this.photoName,
       required this.price,

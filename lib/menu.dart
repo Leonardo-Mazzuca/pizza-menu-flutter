@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:app/pizza_card.dart';
+import 'package:app/pizza_data.dart';
 import 'package:flutter/material.dart';
 
 class Menu extends StatelessWidget {
@@ -14,13 +15,19 @@ class Menu extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: (Column(
-          children: [
-           PizzaCard(),
-           PizzaCard(),
-           PizzaCard(),
-          ],
+          children: buildPizzas()
         )),
       ),
     );
   }
+}
+
+List<PizzaCard> buildPizzas () {
+
+  List<PizzaCard> list = [];
+  for(var pizza in pizzaData) {
+    list.add(PizzaCard(pizza: pizza));
+  }
+
+  return list;
 }

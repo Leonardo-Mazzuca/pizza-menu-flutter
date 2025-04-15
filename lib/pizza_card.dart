@@ -1,11 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:app/pizza_data.dart';
 import 'package:flutter/material.dart';
 
 class PizzaCard extends StatelessWidget {
-  const PizzaCard({super.key});
+  const PizzaCard({super.key, required this.pizza});
 
-  
+  final Pizza pizza;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class PizzaCard extends StatelessWidget {
         child: (Row(
           children: [
             Image.asset(
-              "images/focaccia.jpg",
+              "images/${pizza.photoName}",
               width: 100,
               height: 100,
               fit: BoxFit.cover,
@@ -28,18 +29,18 @@ class PizzaCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Test 1",
+                      pizza.name,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
                     ),
                     Text(
-                      "Test 2",
+                      pizza.ingredients,
                       style: TextStyle(fontSize: 16, color: Colors.black87),
                     ),
                     Text(
-                      "Test 3",
+                      pizza.soldOut ? "Sold out" : "R\$${pizza.price}",
                       style: TextStyle(fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500),
                     ),
                   ],
