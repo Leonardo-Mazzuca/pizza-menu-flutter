@@ -22,29 +22,29 @@ class PizzaCard extends StatelessWidget {
               height: 100,
               fit: BoxFit.cover,
             ),
-            Padding(
-              padding: EdgeInsets.all(10),
-              child: Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      pizza.name,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
+            SizedBox(width: 16,),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    pizza.name,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
                     ),
-                    Text(
-                      pizza.ingredients,
-                      style: TextStyle(fontSize: 16, color: Colors.black87),
-                    ),
-                    Text(
-                      pizza.soldOut ? "Sold out" : "R\$${pizza.price}",
-                      style: TextStyle(fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500),
-                    ),
-                  ],
-                ),
+                  ),
+                  SizedBox(width: 16,),
+                  Text(
+                    pizza.ingredients,
+                    style: TextStyle(fontSize: 16, color: Colors.black87),
+                  ),
+                  SizedBox(width: 16,),
+                  Text(
+                    pizza.soldOut ? "Sold out" : "R\$${pizza.price}",
+                    style: TextStyle(fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500),
+                  ),
+                ],
               ),
             )
           ],
